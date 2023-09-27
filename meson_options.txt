@@ -1,0 +1,2 @@
+option('omap', type : 'feature', value : 'auto',
+       description : 'Build omapdrm extensions')
