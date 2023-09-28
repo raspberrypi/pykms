@@ -2,7 +2,7 @@
 
 rm -rf kmsxx
 
-git clone --depth 1 git@github.com:tomba/kmsxx.git
+git clone --depth 1 https://github.com/tomba/kmsxx.git
 
 pushd kmsxx
 git apply ../pypatch.patch
