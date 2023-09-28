@@ -1,14 +1,11 @@
 # SPDX-License-Identifier: CC0-1.0
 
-project('pykms', 'c', 'cpp',
+project('pykms', 'cpp',
     meson_version : '>= 0.64',
-    version : '0.1.0',
+    version : '0.0.0',
     default_options : [
-        'werror=true',
-        'warning_level=2',
         'cpp_std=c++17',
-    ],
-    license : 'LGPL 2.1+')
+    ],)
 
 r = run_command('clone-kmsxx.sh', check : true)
 
@@ -23,11 +20,9 @@ if libdrmomap_dep.found()
 endif
 
 py = import('python').find_installation()
-message(py.version())
+message('Using python version @0@ from @1@'.format(py.version(), py.path()))
 
 subdir('kmsxx/py')
-
-message(pybindings_enabled)
 
 py.install_sources(
     'kmsxx/py/pykms/__init__.py',

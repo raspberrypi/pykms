@@ -4,5 +4,5 @@ requires = ['meson-python', 'pybind11']
 
 [project]
 name = 'pykms'
-version = '0.0.1'
+version = '0.0.0'
 description = 'PyKMS'
