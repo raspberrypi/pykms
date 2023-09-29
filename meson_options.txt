@@ -1,2 +1,17 @@
+option('repository',
+        type : 'string',
+        value : 'https://github.com/tomba/kmsxx.git',
+        description : 'Base repository to build from')
+
+option('revision',
+        type : 'string',
+        value : 'master',
+        description : 'Git revision to checkout')
+
+option('patch',
+        type : 'string',
+        value : '../pypatch.patch',
+        description : 'Patch to apply')
+
 option('omap', type : 'feature', value : 'auto',
        description : 'Build omapdrm extensions')

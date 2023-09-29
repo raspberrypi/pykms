@@ -2,8 +2,10 @@
 
 rm -rf kmsxx
 
-git clone --depth 1 https://github.com/tomba/kmsxx.git
-
+git clone $1 kmsxx
 pushd kmsxx
-git apply ../pypatch.patch
+
+git checkout $2
+git apply $3
+
 popd

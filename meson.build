@@ -7,13 +7,17 @@ project('pykms', 'cpp',
         'cpp_std=c++17',
     ],)
 
-r = run_command('clone-kmsxx.sh', check : true)
+message('Cloning from: @0@, revision @1@'.format(get_option('repository'), get_option('revision')))
 
-libkmsxx_dep = dependency('kms++', required : true)
-libkmsxxutil_dep = dependency('kms++util', required : true)
+r = run_command('clone-kmsxx.sh', get_option('repository'), get_option('revision'), get_option('patch'), check : true)
+
+missing_message = 'Requires: libkms++-dev, libfmt-dev, libdrm-dev - please install using apt'
+
+libkmsxx_dep = dependency('kms++', required : true, not_found_message : missing_message)
+libkmsxxutil_dep = dependency('kms++util', required : true, not_found_message : missing_message)
 add_global_arguments('-DHAS_KMSXXUTIL', language : 'cpp')
 
-libfmt_dep = dependency('fmt', required : true)
+libfmt_dep = dependency('fmt', required : true, not_found_message : missing_message)
 libdrmomap_dep = dependency('libdrm_omap', required : get_option('omap'))
 if libdrmomap_dep.found()
     add_global_arguments('-DHAS_LIBDRM_OMAP', language : 'cpp')
