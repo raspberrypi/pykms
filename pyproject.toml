@@ -3,8 +3,8 @@ build-backend = 'mesonpy'
 requires = ['meson-python', 'pybind11']
 
 [project]
-name = 'pykms'
-version = '0.0.0a1'
+name = 'rpi-kms'
+version = '0.1a1'
 description = 'kms++ python bindings'
 readme = 'README.md'
 
@@ -16,3 +16,6 @@ Source = "https://github.com/will-v-pi/pykms"
 setup = [
     '-Drevision=a4002d2'
 ]
+
+[tool.flit.module]
+name = "pykms"
