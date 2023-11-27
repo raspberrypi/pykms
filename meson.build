@@ -24,7 +24,7 @@ if libdrmomap_dep.found()
 endif
 
 py = import('python').find_installation()
-message('Using python version @0@ from @1@'.format(py.version(), py.path()))
+message('Using python version @0@ from @1@'.format(py.version(), py.full_path()))
 
 subdir('kmsxx/py')
 

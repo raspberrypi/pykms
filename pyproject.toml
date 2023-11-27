@@ -14,7 +14,7 @@ Source = "https://github.com/will-v-pi/pykms"
 
 [tool.meson-python.args]
 setup = [
-    '-Drevision=a4002d2'
+    '-Drevision=b91affd'
 ]
 
 [tool.flit.module]
