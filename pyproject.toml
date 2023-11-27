@@ -9,7 +9,7 @@ description = 'kms++ python bindings'
 readme = 'README.md'
 
 [project.urls]
-Source = "https://github.com/will-v-pi/pykms"
+Source = "https://github.com/raspberrypi/pykms"
 "kms++ Homepage" = "https://github.com/tomba/kmsxx"
 
 [tool.meson-python.args]
